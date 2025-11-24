@@ -25,7 +25,11 @@ app.use(helmet());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5000"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5000",
+      "https://copilot-tan.vercel.app",
+    ],
     credentials: true,
   })
 );
