@@ -7,7 +7,7 @@ Instead of just mocking data, I integrated the real Gemini API and backed it wit
 ## 🔗 Live Demo & Links
 
 * **🚀 Live Frontend:** [https://copilot-tan.vercel.app](https://copilot-tan.vercel.app)
-* **⚙️ Live Backend:** [https://copilot-1o8e.onrender.com/health](https://copilot-1o8e.onrender.com/health)
+* **⚙️ Live Backend:** [https://copilot-1o8e.onrender.com/](https://copilot-1o8e.onrender.com/)
 * **🎥 Video Walkthrough:** [Watch on Google Drive](https://drive.google.com/file/d/1wFt07EnZklw_nL5MO23XdGQcs8uxyK6h/view?usp=sharing)
 * **🗄️ ER Diagram:** You can find `er-diagram.png` in the root folder of this repo.
 
@@ -21,7 +21,7 @@ I stuck to the tools I know best but swapped the database to meet the relational
 * **Backend:** Node.js + Express.js.
 * **Database:** PostgreSQL (Hosted on Neon.tech).
 * **ORM:** Prisma (I used this to manage the schema and type safety).
-* **AI:** Google Gemini API (`gemini-1.5-flash` model).
+* **AI:** Google Gemini API (`gemini-2.5-flash` model).
 * **Security:** Helmet headers, Rate Limiting, and CORS.
 
 ---
