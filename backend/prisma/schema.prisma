@@ -1,0 +1,40 @@
+// This tells Prisma we are using PostgreSQL
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// This tells Prisma to generate JavaScript code for us
+generator client {
+  provider = "prisma-client-js"
+}
+
+// MODEL 1: The User
+// In Mongo, this would be a UserSchema
+model User {
+  id        Int      @id @default(autoincrement()) // Auto-generates IDs: 1, 2, 3...
+  username  String   @unique
+  email     String   @unique
+  createdAt DateTime @default(now())
+  
+  // This says: "A User can have many Generations"
+  generations Generation[]
+}
+
+// MODEL 2: The Generation (History)
+model Generation {
+  id        Int      @id @default(autoincrement())
+  prompt    String
+  language  String
+  // We use @db.Text because code can be very long. Standard String is limited.
+  code      String   @db.Text 
+  createdAt DateTime @default(now())
+  
+  // RELATIONS (The SQL part)
+  // This links this generation to a specific User ID
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+
+  // This makes searching by user faster (Requirement: Indexing)
+  @@index([userId])
+}
