@@ -78,5 +78,5 @@ If you want to run this on your machine:
 
 1. **Clone the repo**
    ```bash
-   git clone <your-repo-link>
-   cd automation-edge-assignment
+   git clone https://github.com/abhi-3000/copilot.git
+   cd copilot
