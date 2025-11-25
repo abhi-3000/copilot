@@ -1,0 +1,87 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="boltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="innerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)" filter="url(#innerShadow)"/>
+  
+  <!-- Outer Glow Ring -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="url(#bgGradient)" stroke-width="3" opacity="0.3" filter="url(#glow)"/>
+  
+  <!-- Code Brackets (representing coding) -->
+  <path d="M 180 180 L 140 256 L 180 332" 
+        fill="none" 
+        stroke="rgba(255,255,255,0.3)" 
+        stroke-width="16" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <path d="M 332 180 L 372 256 L 332 332" 
+        fill="none" 
+        stroke="rgba(255,255,255,0.3)" 
+        stroke-width="16" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Lightning Bolt (representing speed and AI power) -->
+  <g filter="url(#glow)">
+    <path d="M 280 140 L 220 256 L 260 256 L 232 372 L 320 230 L 270 230 Z" 
+          fill="url(#boltGradient)" 
+          stroke="#fff" 
+          stroke-width="4" 
+          stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Additional lightning accent -->
+  <path d="M 280 140 L 220 256 L 260 256 L 232 372 L 320 230 L 270 230 Z" 
+        fill="none" 
+        stroke="rgba(255,255,255,0.6)" 
+        stroke-width="2" 
+        stroke-linejoin="round"
+        opacity="0.8"/>
+  
+  <!-- Sparkle effects -->
+  <circle cx="200" cy="160" r="4" fill="#fff" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="340" cy="200" r="3" fill="#fff" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="310" cy="350" r="4" fill="#fff" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="180" cy="320" r="3" fill="#fff" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
